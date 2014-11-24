@@ -37,8 +37,8 @@ class Gerenciador:
   def finalizar_evento(self, evento):
     self.eventos[evento].aberto = False
 
-  def criar_lista(self, nome, evento):
-    l = factories.lista.ListaFactory.criar_lista(nome)
+  def criar_lista(self, nome, preco, evento):
+    l = factories.lista.ListaFactory.criar_lista(nome, preco)
     self.eventos[evento].listas[nome] = l
 
   def adicionar_comissario(self, nome, lista, evento, convidados):

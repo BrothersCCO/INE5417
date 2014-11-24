@@ -8,5 +8,5 @@ setuptools.setup(
   url='https://github.com/ranisalt/INE5417',
   license='MIT',
 
-  install_requires=['PyMySQL', 'skylark'],
+  install_requires=['pymongo'],
 )

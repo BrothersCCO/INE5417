@@ -3,11 +3,11 @@ from models.evento import Evento
 
 class EventoFactory:
   @staticmethod
-  def criar_evento(nome, data):
+  def criar_evento(nome, data, preco_padrao):
     if not isinstance(nome, str):
       raise TypeError('O nome deve ser uma string')
 
-    if not isinstance(data. datetime.datetime):
+    if not isinstance(data, datetime.datetime):
       raise TypeError('A data deve ser um datetime.datetime')
 
-    return Evento(nome, data)
+    return Evento(nome, data, preco_padrao)

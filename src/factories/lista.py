@@ -1,4 +1,4 @@
-from models.listas import Lista
+from models.lista import Lista
 
 class ListaFactory:
   @staticmethod

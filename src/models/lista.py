@@ -7,11 +7,11 @@ class Lista:
     self.comissarios = {}
     self.convidados = []
 
-  def adicionar_comissario(self, comissario, convidados):
-    self.comissarios[comissario] = convidados
+  def adicionar_comissario(self, comissario, numero_convidados):
+    self.comissarios[comissario] = numero_convidados
 
-  def adicionar_convidado(self, comissario, convidado):
-    if self.comissario[comissario] > 0:
+  def adicionar_convidado(self, convidado, comissario):
+    if self.comissarios[comissario] > 0:
       self.convidados.append(convidado)
       self.comissarios[comissario] -= 1
     else:

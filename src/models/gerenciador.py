@@ -41,13 +41,13 @@ class Gerenciador:
     l = factories.lista.ListaFactory.criar_lista(nome, preco)
     self.eventos[evento].listas[nome] = l
 
-  def adicionar_comissario(self, nome, lista, evento, convidados):
+  def adicionar_comissario(self, nome, lista, evento, numero_convidados):
     c = factories.comissario.ComissarioFactory.criar_comissario(nome)
-    self.eventos[evento].listas[lista].adicionar_comissario(c)
+    self.eventos[evento].listas[lista].adicionar_comissario(c, numero_convidados)
 
-  def adicionar_convidado(self, nome, sexo, lista, evento):
+  def adicionar_convidado(self, nome, sexo, lista, evento, comissario):
     c = factories.convidado.ConvidadoFactory.criar_convidado(nome, sexo)
-    self.eventos[evento].listas[lista].adicionar_convidado(c)
+    self.eventos[evento].listas[lista].adicionar_convidado(c, comissario)
 
   def registrar_entrada(self, nome, sexo, evento):
     if not self.evento[evento].aberto:

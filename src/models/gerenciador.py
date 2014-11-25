@@ -54,9 +54,9 @@ class Gerenciador:
       raise EventoNaoIniciadoError
 
     for l in self.eventos[evento].listas.values():
-      for c in l.comissarios:
-        if c == nome:
-          c.entrada = datetime.now()
-          return l.preco[sexo]
+      for c in l.convidados:
+        if c.nome == nome and c.sexo == sexo:
+          c.entrada = datetime.datetime.now()
+          return l.precos[sexo]
     else:
       return self.eventos[evento].preco_padrao[sexo]

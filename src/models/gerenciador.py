@@ -50,12 +50,12 @@ class Gerenciador:
     self.eventos[evento].listas[lista].adicionar_convidado(c, comissario)
 
   def registrar_entrada(self, nome, sexo, evento):
-    if not self.evento[evento].aberto:
+    if not self.eventos[evento].aberto:
       raise EventoNaoIniciadoError
 
     for l in self.eventos[evento].listas.values():
-      for c in l:
-        if c.nome == nome:
+      for c in l.comissarios:
+        if c == nome:
           c.entrada = datetime.now()
           return l.preco[sexo]
     else:
